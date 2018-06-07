@@ -1,0 +1,12 @@
+name: geoMap
+title: geoMap
+username:
+account: delermando
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 357233
+bundleId: 1417719
+url: https://delermando.shinyapps.io/geoMap/
+when: 1528409910.54088
+asMultiple: FALSE
+asStatic: FALSE
