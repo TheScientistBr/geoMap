@@ -1,4 +1,4 @@
-library(shinydashboard)
+library(shiny)
 library(googleway)
 
 vars <- c(
@@ -13,14 +13,12 @@ navbarPage("Superzip", id="nav",
            
            tabPanel("Mapa Interativo",
                     div(class="outer",
-                        
                         tags$head(
                                 # Include our custom CSS
                                 includeCSS("styles.css"),
                                 includeScript("gomap.js")
                         ),
-                        
-                        google_mapOutput("map"),
+                       
                         # Shiny versions prior to 0.11 should use class = "modal" instead.
                         absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
                                       draggable = TRUE, top = 60, left = "auto", right = 20, bottom = "auto",
@@ -31,10 +29,21 @@ navbarPage("Superzip", id="nav",
                                       selectInput("color", "Color", vars)
                                       #plotOutput("histCentile", height = 200),
                                       #plotOutput("scatterCollegeIncome", height = 250)
-                        ),
-                        tags$div(id="cite",
-                                 'Data compiled for ', tags$em('Coming Apart: The State of White America, 1960–2010'), ' by Charles Murray (Crown Forum, 2012).'
                         )
                     )
            )
 )
+
+
+ui <- dashboardPage(
+        
+        dashboardHeader(),
+        dashboardSidebar(),
+        dashboardBody(
+                box(width = 12,
+                    google_mapOutput(outputId = "map")
+                )
+        )
+)
+
+
