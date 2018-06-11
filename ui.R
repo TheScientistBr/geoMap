@@ -35,15 +35,5 @@ navbarPage("Superzip", id="nav",
 )
 
 
-ui <- dashboardPage(
-        
-        dashboardHeader(),
-        dashboardSidebar(),
-        dashboardBody(
-                box(width = 12,
-                    google_mapOutput(outputId = "map")
-                )
-        )
-)
 
 
